@@ -79,7 +79,7 @@ class JobItemDetails extends Component {
     if (response.ok === true) {
       const data = await response.json()
       const updatedData = this.getFormattedData(data.job_details)
-      const updatedSkillData = data.similar_jobs_map(eachSimilarJob =>
+      const updatedSkillData = data.similar_jobs.map(eachSimilarJob =>
         this.getFormattedSkillData(eachSimilarJob),
       )
       console.log(updatedData)
